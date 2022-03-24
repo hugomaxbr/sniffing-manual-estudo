@@ -4,12 +4,12 @@ import struct
 from ctypes import *
 import socket
 
-#def get_ip_address():
- #  s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-  #  s.connect(("8.8.8.8", 80))
-   # return s.getsockname()[0]
+def get_ip_address():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    return s.getsockname()[0]
 
-host = "192.168.1.0"
+host = get_ip_address()
 is_windows = True if os.name == 'nt' else False
 
 class IP(Structure): 
